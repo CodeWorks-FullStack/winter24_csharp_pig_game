@@ -1,0 +1,14 @@
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\bin\Debug\net9.0\pig_game.exe
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\bin\Debug\net9.0\pig_game.deps.json
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\bin\Debug\net9.0\pig_game.runtimeconfig.json
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\bin\Debug\net9.0\pig_game.dll
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\bin\Debug\net9.0\pig_game.pdb
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.AssemblyInfoInputs.cache
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.AssemblyInfo.cs
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.csproj.CoreCompileInputs.cache
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.dll
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\refint\pig_game.dll
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.pdb
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\pig_game.genruntimeconfig.cache
+C:\Users\JeremysSurface\source\Codeworks\2025_winter\pig_game\obj\Debug\net9.0\ref\pig_game.dll
