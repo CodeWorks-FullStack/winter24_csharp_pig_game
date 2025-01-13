@@ -1,6 +1,4 @@
-﻿
-
-// NOTE using is similar to import 
+﻿// NOTE using is similar to import 
 using pig_game;
 
 class Program

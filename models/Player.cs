@@ -13,6 +13,8 @@ public class Player
   public string Name { get; set; }
   public int Score { get; set; }
   public List<int> DiceRolls { get; set; }
+
+  // getter (computed property)
   public int TurnScore
   {
     get

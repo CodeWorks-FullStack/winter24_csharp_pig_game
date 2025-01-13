@@ -8,12 +8,13 @@
 // import
 using pig_game.models;
 
-// similar to export
+// export
 namespace pig_game;
 
+// public classes will be bundled with the namespace (exported)
 public class Game
 {
-  // constructor
+  //ANCHOR class constructor
   public Game()
   {
     Players = [];
@@ -52,16 +53,22 @@ public class Game
     Console.WriteLine($"{winningPlayer.Name} is the winner!");
   }
 
+  //ANCHOR class properties
   public int WinningScore { get; set; } = 50;
 
   public List<Player> Players { get; set; }
+
+  // ANCHOR class methods
 
   // NOTE public is access modifier (allows other methods/classes to run this method)
   // NOTE string is the return type of the method
   public string GetPlayerName()
   {
+    // ? denotes that the variable could be null
     string? name = Console.ReadLine();
+    // Exception class is similar to Error class in js
     if (name == null) throw new Exception("You must enter a name!");
+    // the type of the returned value must match the method's return type(string)
     return name;
   }
 
@@ -71,6 +78,7 @@ public class Game
     return randomNumber;
   }
 
+  // void return type denotes that this method does not return a value
   public void RollDice(Player player)
   {
     Console.Clear();
@@ -80,13 +88,13 @@ public class Game
 
     player.DiceRolls.Add(diceRoll);
 
-
     Console.WriteLine();
 
     Console.Write("Rolls: ");
 
     player.DiceRolls.ForEach(roll =>
     {
+      // write will have all console messages printed inline as opposed to on a newline
       Console.Write(roll + " ");
     });
 
@@ -103,8 +111,10 @@ public class Game
 
     if (diceRoll == 1)
     {
+      // changes text color
       Console.ForegroundColor = ConsoleColor.Red;
       Console.WriteLine("TOO BAD YOU ROLLED A 1");
+      // pauses application for 1 second
       Thread.Sleep(1000);
       Console.ResetColor();
       player.DiceRolls.Clear();
