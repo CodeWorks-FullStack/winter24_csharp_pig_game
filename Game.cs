@@ -32,14 +32,30 @@ public class Game
       Player player = Players[i];
       Console.WriteLine($"Player {i + 1} is {player.Name}");
     }
+
+    for (int i = 0; i < Players.Count; i++)
+    {
+      Player player = Players[i];
+      Console.WriteLine($"{player.Name} | Score: {player.Score}");
+      int diceRoll = GetRandomDiceRoll();
+      Console.WriteLine($"You rolled a {diceRoll}");
+    }
   }
 
   public List<Player> Players { get; set; }
 
+  // NOTE public is access modifier (allows other methods/classes to run this method)
+  // NOTE string is the return type of the method
   public string GetPlayerName()
   {
     string name = Console.ReadLine();
     if (name == null) throw new Exception("You must enter a name!");
     return name;
+  }
+
+  public int GetRandomDiceRoll()
+  {
+    int randomNumber = new Random().Next(1, 7);
+    return randomNumber;
   }
 }

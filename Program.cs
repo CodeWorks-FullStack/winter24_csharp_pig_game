@@ -2,7 +2,6 @@
 
 // NOTE using is similar to import 
 using pig_game;
-using pig_game.models;
 
 class Program
 {
@@ -10,8 +9,7 @@ class Program
   public static void Main()
   {
     Console.Clear();
-    new Game();
+    Game game = new Game();
   }
 
-  public List<Player> Players = [];
 }
