@@ -33,12 +33,14 @@ public class Game
       Console.WriteLine($"Player {i + 1} is {player.Name}");
     }
 
-    for (int i = 0; i < Players.Count; i++)
+    for (int i = 0; i <= Players.Count; i++)
     {
+      // NOTE for loop starts over
+      if (i == Players.Count) i = 0;
+      Console.Clear();
       Player player = Players[i];
       Console.WriteLine($"{player.Name} | Score: {player.Score}");
-      int diceRoll = GetRandomDiceRoll();
-      Console.WriteLine($"You rolled a {diceRoll}");
+      RollDice();
     }
   }
 
@@ -57,5 +59,20 @@ public class Game
   {
     int randomNumber = new Random().Next(1, 7);
     return randomNumber;
+  }
+
+  public void RollDice()
+  {
+    int diceRoll = GetRandomDiceRoll();
+    Console.WriteLine($"You rolled a {diceRoll}");
+
+    Console.WriteLine("Do you want to roll again y/n?");
+    char keyPressed = Console.ReadKey().KeyChar;
+    Console.WriteLine();
+    if (keyPressed == 'y')
+    {
+      // NOTE recursion
+      RollDice();
+    }
   }
 }

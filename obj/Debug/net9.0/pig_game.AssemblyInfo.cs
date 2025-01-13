@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pig_game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+768d44439116506f161df375ac8fb0a56654c3ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b69bc6e8e08cc45cc95f7316d2d133b50d48cb5f")]
 [assembly: System.Reflection.AssemblyProductAttribute("pig_game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pig_game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
