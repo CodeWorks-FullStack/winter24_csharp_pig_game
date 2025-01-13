@@ -1,7 +1,7 @@
 // ✅ need at least 2 players 
 // ✅ each player takes turns rolling dice
 // ✅ on your turn, you can roll the dice as many times as you want
-// trying to get a score of 50 to win
+// ✅ trying to get a score of 50 to win
 // ✅ you can stop rolling at any time to add all rolls to your score
 // ✅ if you roll a 1, your turn is over and you get no score
 
@@ -60,7 +60,7 @@ public class Game
   // NOTE string is the return type of the method
   public string GetPlayerName()
   {
-    string name = Console.ReadLine();
+    string? name = Console.ReadLine();
     if (name == null) throw new Exception("You must enter a name!");
     return name;
   }
