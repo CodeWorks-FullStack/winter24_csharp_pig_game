@@ -1,9 +1,9 @@
 // ✅ need at least 2 players 
-// each player takes turns rolling dice
-// on your turn, you can roll the dice as many times as you want
+// ✅ each player takes turns rolling dice
+// ✅ on your turn, you can roll the dice as many times as you want
 // trying to get a score of 50 to win
 // you can stop rolling at any time to add all rolls to your score
-// if you roll a 1, your turn is over and you get no score
+// ✅ if you roll a 1, your turn is over and you get no score
 
 // import
 using pig_game.models;
@@ -39,8 +39,7 @@ public class Game
       if (i == Players.Count) i = 0;
       Console.Clear();
       Player player = Players[i];
-      Console.WriteLine($"{player.Name} | Score: {player.Score}");
-      RollDice();
+      RollDice(player);
     }
   }
 
@@ -61,10 +60,39 @@ public class Game
     return randomNumber;
   }
 
-  public void RollDice()
+  public void RollDice(Player player)
   {
+    Console.Clear();
+    Console.WriteLine($"{player.Name} | Score: {player.Score}");
+
     int diceRoll = GetRandomDiceRoll();
-    Console.WriteLine($"You rolled a {diceRoll}");
+
+    player.DiceRolls.Add(diceRoll);
+
+
+    Console.WriteLine();
+
+    Console.Write("Rolls: ");
+
+    player.DiceRolls.ForEach(roll =>
+    {
+      Console.Write(roll + " ");
+    });
+
+    Console.WriteLine();
+    Console.WriteLine();
+
+    Console.WriteLine($"Score for this turn is {player.TurnScore}");
+
+    if (diceRoll == 1)
+    {
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("TOO BAD YOU ROLLED A 1");
+      Thread.Sleep(1000);
+      Console.ResetColor();
+      player.DiceRolls.Clear();
+      return; //stop the rolldice method
+    }
 
     Console.WriteLine("Do you want to roll again y/n?");
     char keyPressed = Console.ReadKey().KeyChar;
@@ -72,7 +100,13 @@ public class Game
     if (keyPressed == 'y')
     {
       // NOTE recursion
-      RollDice();
+      RollDice(player);
+    }
+    else
+    {
+      player.Score += player.TurnScore;
+      player.DiceRolls.Clear();
+      return;
     }
   }
 }
