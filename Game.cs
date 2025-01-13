@@ -2,7 +2,7 @@
 // ✅ each player takes turns rolling dice
 // ✅ on your turn, you can roll the dice as many times as you want
 // trying to get a score of 50 to win
-// you can stop rolling at any time to add all rolls to your score
+// ✅ you can stop rolling at any time to add all rolls to your score
 // ✅ if you roll a 1, your turn is over and you get no score
 
 // import
@@ -40,8 +40,19 @@ public class Game
       Console.Clear();
       Player player = Players[i];
       RollDice(player);
+
+      if (player.Score >= WinningScore) break; // stop for loop from running
     }
+
+    Player? winningPlayer = Players.Find(player => player.Score >= WinningScore);
+
+    if (winningPlayer == null) throw new Exception("UH OH");
+
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"{winningPlayer.Name} is the winner!");
   }
+
+  public int WinningScore { get; set; } = 50;
 
   public List<Player> Players { get; set; }
 
@@ -83,6 +94,12 @@ public class Game
     Console.WriteLine();
 
     Console.WriteLine($"Score for this turn is {player.TurnScore}");
+
+    if (player.TurnScore + player.Score >= WinningScore)
+    {
+      player.Score += player.TurnScore;
+      return;
+    }
 
     if (diceRoll == 1)
     {
